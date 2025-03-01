@@ -1,3 +1,5 @@
+import Filters from './Filters';
+
 export default function Header() {
     return (
         <header>
@@ -6,6 +8,7 @@ export default function Header() {
                     <div>
                         Logo
                     </div>
+                    <Filters />
 
                 </div>
 
