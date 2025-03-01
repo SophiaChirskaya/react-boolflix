@@ -8,6 +8,7 @@ const API_KEY = 'ac6df0f6c1925ad4a10b84fbfeb6f641'
 
 function App() {
     const [movies, setMovies] = useState([])
+    const [series, setSeries] = useState([])
     const [query, setQuery] = useState('Tesoro')
 
     function fetchData() {
@@ -22,6 +23,26 @@ function App() {
         }).catch(err => {
             console.error(err)
             setMovies([])
+        })
+
+        axios.get('https://api.themoviedb.org/3/search/tv',{
+            params: {
+                api_key: API_KEY,
+                query
+            }
+        }).then(res => {
+            console.log(res.data)
+            const mappedSeries = res.data.results.map(item => {
+                return{
+                    ...item,
+                    title: item.name,
+                    original_title: item.original_name
+                }
+            })
+            setSeries(mappedSeries)
+        }).catch(err => {
+            console.error(err)
+            setSeries([])
         })
 
 
