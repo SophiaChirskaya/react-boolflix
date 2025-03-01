@@ -2,7 +2,7 @@ import { useState } from 'react'
 import GlobalContext from './context/GlobalContext'
 import Main from './components/Main'
 import Header from './components/Header'
-import axios from 'axios'
+import axios from 'axios';
 
 const API_KEY = 'ac6df0f6c1925ad4a10b84fbfeb6f641'
 
@@ -17,7 +17,7 @@ function App() {
                 api_key: API_KEY,
                 query
             }
-        }).tnen(res => {
+        }).then(res => {
             console.log(res.data)
             setMovies(res.data.results)
         }).catch(err => {

@@ -1,13 +1,13 @@
-import itflag from '..assets/flags/it.jpg'
-import enflag from '..assets/flags/en.jpg'
-import frflag from '..assets/flags/fr.jpg'
-import deflag from '..assets/flags/de.jpg'
+import itFlag from '../assets/flags/it.png'
+import enFlag from '../assets/flags/en.png'
+import frFlag from '../assets/flags/fr.png'
+import deFlag from '../assets/flags/de.png'
 
 const flagsMap = {
-    it: itflag,
-    en: enflag,
-    de: deflag,
-    fr: frflag,
+    it: itFlag,
+    en: enFlag,
+    de: deFlag,
+    fr: frFlag,
 }
 
 export default flagsMap
