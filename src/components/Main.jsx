@@ -8,6 +8,7 @@ export default function Main() {
     return (
         <main>
             <ItemList title='Movies' />
+            <ItemList title='Series' />
             
         </main>
     )
