@@ -16,8 +16,8 @@ export default function Filters() {
     return (
         <form onSubmit={onSubmit}>
             <label htmlFor="query">Cerca</label>
-            <input type="text" name="query" onChange={onChange} value={query} id="query" placeholder="Cerca..." />
-            <button>Cerca</button>
+            <input type="text" className="search-input" name="query" onChange={onChange} value={query} id="query" placeholder="Cerca..." />
+            <button className="button">Cerca</button>
         </form>
     )
 }

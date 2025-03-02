@@ -15,21 +15,24 @@ export default function Card({ item }) {
     }
     
     return (
-        <div>
+        <div className='card'>
             <figure>
-                <img src={imgSrc} alt="" />
+                <img src={imgSrc} alt={title} className='poster'/>
             </figure>
-            <h3>{ title }</h3>
-            <p>{ original_title }</p>
-
-            {
-                flagsMap [original_language] ?
-                <img src={flagsMap[original_language]} height={20} alt="" /> :
-                <p>{ original_language }</p>
-            }
-            <p>{ vote_average } : {vote}</p>
-            <div>
-                {stars}
+            <div className='card-content'>
+                <h3 className='title'>{ title }</h3>
+                <p className='original-title'>{ original_title }</p>
+                <div className='language'>
+                    {
+                        flagsMap [original_language] ?
+                        <img src={flagsMap[original_language]} height={20} alt="" /> :
+                        <p>{ original_language }</p>
+                    }
+                </div>
+                <p className='rating'>{ vote_average } : {vote}</p>
+                <div className='stars'>
+                    {stars}
+                </div>
             </div>
         </div>
     )

@@ -3,8 +3,8 @@ import Card from './Card';
 export default function ItemList({ items = [], title }) {
 
     return(
-        <section>
-            <div className='container'>
+        <section className='main-container'>
+            <div className='slider'>
                 <h2>{ title }</h2>
             </div>
             <div className='container'>

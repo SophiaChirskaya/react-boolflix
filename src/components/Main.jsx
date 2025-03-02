@@ -4,11 +4,12 @@ import GlobalContext from "../context/GlobalContext";
 
 export default function Main() {
 
-    const { movies } = useContext(GlobalContext)
+    const { movies, series } = useContext(GlobalContext)
+
     return (
         <main>
-            <ItemList title='Movies' />
-            <ItemList title='Series' />
+            <ItemList title='Movies' items={movies} />
+            <ItemList title='Series' items={series} />
             
         </main>
     )
