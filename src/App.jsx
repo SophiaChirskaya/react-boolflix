@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import GlobalContext from './context/GlobalContext'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
 import Header from './components/Header'
 import axios from 'axios';
+import DefaultLayout from './layouts/DefaultLayout'
+import HomePage from './pages/HomePage'
 
 const API_KEY = 'ac6df0f6c1925ad4a10b84fbfeb6f641'
 
@@ -50,8 +53,13 @@ function App() {
 
     return (
         <GlobalContext.Provider value={{ movies, query, setQuery, fetchData}}>
-            <Header />
-            <Main />
+            <Router>
+                <Routes>
+                    <Route element={<DefaultLayout />}>
+                    <Route path="/" elementt={<HomePage />}/>
+                    </Route>
+                </Routes>
+            </Router>    
         </GlobalContext.Provider>
     )
 }
